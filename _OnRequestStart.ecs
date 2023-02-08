@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <title>ecpages</title>
     </head>
@@ -19,7 +18,6 @@
       }
       .bg-body-tertiary {
         background-color: #242729 !important;
-        height: 3.7vw;
         font-size: 20px;
       }
       .navbar-brand {
@@ -52,12 +50,46 @@
         height: 100%;
         object-fit: cover;
       }
+      #survey{
+        display: flex;
+        justify-content: center;
+        background-color: #242729;
+        height: 41.4vh;
+        color: white;
+        padding-top: 1.9vh;
+        border-top: solid 1px rgb(63, 62, 62);
+      }
+      #main-box{
+        display: flex;
+        justify-content: center;
+        width: 95%;
+        height: 95%;
+        border-radius: 6px;
+      }
+      .feature-box {
+        background-color: #191b1c;
+        width: 25vw
+      }
+      .modal-content{
+        background-color: #191b1c;
+      }
+      #output{
+        font-size: 30px;
+      }
+      #results {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 4.2vh
+      }
+     
+     
       
 
   </style>
 
 
-    <body>
+    <body onload="startTime()">
+
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">ECPAGES</a>
@@ -100,11 +132,12 @@
             <div class="carousel-caption top-0 mt-4">
               <p class="mt-5 fs-3 text-uppercase">See the code</p>
               <h1 class="display-1 fw-bolder text-capitalize">GitHub</h1>
-              <a href="https://github.com/kitealva">
+              <a href="https://github.com/kitealva/ecpages">
               <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Let's Go!</button>
               </a>
             </div>
           </div>
+
           <div class="carousel-item c-item">
             <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=&q=100" class="d-block w-100 c-img" alt="Slide 2">
             <div class="carousel-caption top-0 mt-4">
@@ -115,6 +148,7 @@
                 </a>
             </div>
           </div>
+
           <div class="carousel-item c-item">
             <img src="https://images.unsplash.com/photo-1563990308375-4a157b702ee8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGRhcmslMjBtb3VudGFpbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=&q=100" class="d-block w-100 c-img" alt="Slide 3">
             <div class="carousel-caption top-0 mt-4">
@@ -123,9 +157,9 @@
               <a href="https://github.com/kitealva">
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5">GitHub</button>
                 </a>
-              
+            </div> 
           </div>
-        </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -134,11 +168,123 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+        </div>
+      </div>
+
+      <div id="survey">
+        <div id="main-box">
+        <div class="card text-center feature-box">
+          <div class="card-header">
+            Question of the Day!
+            <br>
+            (This is for fun)
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Which of these do you prefer?</h5>
+            <p class="card-text">Food</p>
+
+
+              <div id="results">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-value="result1" data-bs-food="Breakfast">Breakfast</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-value="result2" data-bs-food="Lunch">Lunch</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-value="result3" data-bs-food="Dinner">Dinner</button>
+              </div>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <div id="output">
+                            You
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <div class="card-footer">
+            02/07/23
+          </div>
+        </div>
+        </div> 
       </div>
       
+      <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
 
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">ECPAGES</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Hello, world! This is a toast message.
+          </div>
+          <textarea placeholder="Type message.." name="msg" required></textarea>
+        </div>
+      </div>
+
+
+      <script>
+        const exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', event => {
+          
+          const button = event.relatedTarget
+          
+          const recipient = button.getAttribute('data-bs-food')
     
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+          const modalTitle = exampleModal.querySelector('.modal-title')
+          const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+          modalTitle.textContent = `${recipient}!`
+          modalBodyInput.value = recipient
+        })
+      </script>
+
+      <script>
+        const results = document.querySelectorAll('button.btn.btn-primary');
+        const output = document.querySelector('#output');
+
+        results.forEach(result => {
+          result.addEventListener('click', e => {
+            const selectedResult = e.target.getAttribute('data-value');
+            output.innerHTML = `User selected: ${selectedResult}`;
+
+            if (selectedResult === 'result1') {
+              output.innerHTML = 'This is an amazing choice!';
+            } else if (selectedResult === 'result2') {
+              output.innerHTML = 'This is an okay choice.';
+            } else if (selectedResult === 'result3') {
+              output.innerHTML = 'The best choice in my opinion!';
+            }
+          });
+        }); 
+      </script>
+
+      <script> 
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+        if (toastTrigger) {
+          toastTrigger.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastLiveExample)
+
+            toast.show()
+          })
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     </body>
     </html>
