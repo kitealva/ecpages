@@ -81,6 +81,88 @@
         justify-content: space-evenly;
         padding-top: 4.2vh
       }
+      #liveToastBtn{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-right: 5vw;
+        margin-bottom: 4vh;
+        
+      }
+      #liveToast {
+        background-color: #191b1c;
+        color: white;
+        height: 30vh;
+      }
+      .toast-header {
+        background-color: #191b1c;
+      }
+      .me-auto {
+        color: white;
+      }
+      #textarea {
+        width: 100%;
+        height: 100px;
+      }
+      #help {
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        color: white;
+      }
+      .toast-body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      #box1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4vw;
+        height: 4vh;
+        background-color: #0d6efd;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+      #box2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4vw;
+        height: 4vh;
+        background-color: #0d6efd;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+      #box3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4vw;
+        height: 4vh;
+        background-color: #0d6efd;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+      #submit {
+      display: flex;
+      justify-content: center;
+      color: white;
+      }
+      #sendbtn {
+        background-color: #1d7e18;
+        border: none;
+        color: white;
+        margin-top: 5px;
+        height: 30px;
+        width: 50px;
+        border-radius: 4px;
+      }
+
      
      
       
@@ -111,6 +193,12 @@
             <a href = "mailto:kite.alva@gmail.com?subject = Feedback&body = Message" style="text-decoration: none;">
             <span class="navbar-text">
               Contact
+            </span>
+          </a>
+
+          <a title="login" id="login" href="/secondpage.ecs">
+            <span class="navbar-text">
+              test
             </span>
           </a>
           </div>
@@ -215,13 +303,13 @@
             </div>
           
           <div class="card-footer">
-            02/07/23
+            02/09/23
           </div>
         </div>
         </div> 
       </div>
       
-      <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+      <button type="button" class="btn btn-primary" id="liveToastBtn">Need help?</button>
 
       <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -229,10 +317,17 @@
             <strong class="me-auto">ECPAGES</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>
+          <textarea id="textarea" placeholder="Type message.." name="msg" required></textarea>
+          <label id="help" for="help">How can we help?</label>
           <div class="toast-body">
-            Hello, world! This is a toast message.
+            
+            <div id="box1">Items</div>
+            <div id="box2">FAQ</div>
+            <div id="box3">Help!</div>
           </div>
-          <textarea placeholder="Type message.." name="msg" required></textarea>
+          <div id="submit">
+            <button id="sendbtn">Send</button>
+          </div>
         </div>
       </div>
 
