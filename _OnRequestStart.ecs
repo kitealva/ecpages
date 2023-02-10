@@ -162,6 +162,8 @@
         width: 50px;
         border-radius: 4px;
       }
+      
+      
 
      
      
@@ -170,7 +172,7 @@
   </style>
 
 
-    <body onload="startTime()">
+    <body>
 
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -193,12 +195,6 @@
             <a href = "mailto:kite.alva@gmail.com?subject = Feedback&body = Message" style="text-decoration: none;">
             <span class="navbar-text">
               Contact
-            </span>
-          </a>
-
-          <a title="login" id="login" href="/secondpage.ecs">
-            <span class="navbar-text">
-              test
             </span>
           </a>
           </div>
@@ -330,6 +326,28 @@
           </div>
         </div>
       </div>
+      
+
+      <ec:var num1="2"/>
+      <ec:var num2="3"/>
+      <ec:var string="'hello'"/>
+      <ec:var word='"first"'' word2="second"/>
+      <ec:var test="'test the word'"/>
+      <ec:var currentDate = @today()/>
+      
+
+      <script>
+        console.log(@num1 + @num2)
+
+        console.log(@string)
+
+        console.log(@test.charIndex(r))
+
+        console.log(@currentDate.formatDate(dd, mmm, yyyy))
+        
+    
+        
+      </script>
 
 
       <script>
@@ -346,6 +364,7 @@
           modalTitle.textContent = `${recipient}!`
           modalBodyInput.value = recipient
         })
+
       </script>
 
       <script>
@@ -379,6 +398,7 @@
           })
         }
       </script>
+
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     </body>
