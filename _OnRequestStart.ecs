@@ -1,3 +1,6 @@
+<ec:function xComment></ec:function>
+@var(comment|@xComment.asReference) @comment(this creates a function that does nothing and aliases a variable to it)
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -330,23 +333,16 @@
 
       <ec:var num1="2"/>
       <ec:var num2="3"/>
-      <ec:var string="'hello'"/>
-      <ec:var word='"first"'' word2="second"/>
-      <ec:var test="'test the word'"/>
-      <ec:var currentDate = @today()/>
+      <ec:var string="hello"/>
+      <ec:var word="first" word2="second"/>
+      <ec:var test="test the word"/>
       
 
       <script>
-        console.log(@num1 + @num2)
-
-        console.log(@string)
-
-        console.log(@test.charIndex(r))
-
-        console.log(@currentDate.formatDate(dd, mmm, yyyy))
-        
-    
-        
+        console.log('@chr(64)num1 + @chr(64)num2\t\t', @num1 + @num2)
+        console.log('@chr(64)string\t\t\t\t', @string.with('|'))
+        console.log('@chr(64)test.charIndex(r)\t', @test.charIndex(r).with('|'))
+        console.log('@chr(64)today\t\t\t\t', @today.formatDate(dd, mmm, yyyy).with('|'))
       </script>
 
 
