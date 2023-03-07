@@ -342,7 +342,7 @@
         console.log('@chr(64)num1 + @chr(64)num2\t\t', @num1 + @num2)
         console.log('@chr(64)string\t\t\t\t', @string.with('|'))
         console.log('@chr(64)test.charIndex(r)\t', @test.charIndex(r).with('|'))
-        console.log('@chr(64)today\t\t\t\t', @today.formatDate(dd, mmm, yyyy).with('|'))
+        console.log('@chr(64)today\t\t\t\t', @today.formatDate(mm, dd, yyyy).with('|'))
       </script>
 
 
